@@ -176,12 +176,11 @@ footer{padding:32px 0 64px;border-top:1px solid var(--line);color:var(--muted);f
   <h2>Ha telefonálás helyett kényelmesebb, itt várjuk az információkat.</h2>
   <p class="sub">Pár perc. Ebből látjuk, mire van szükséged, és felvesszük veled a kapcsolatot. Az oldal és a hirdetések elkészítését a díj megérkezése után kezdjük.</p>
 
-  <form action="https://formsubmit.co/miklosjelencsity@gmail.com" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="_cc" value="muller.dani.juve@gmail.com">
-    <input type="hidden" name="_subject" value="Alapkő Bau: kitöltött űrlap">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <form id="urlap-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="926117e3-0bc2-4262-baa2-4ac45620532c">
+    <input type="hidden" name="subject" value="Alapkő Bau: kitöltött űrlap">
+    <input type="hidden" name="from_name" value="Nezor javaslat-oldal">
+    <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
 
     <label for="mit">Milyen beltéri munkákat vállalsz? <small>(bontás, burkolás, gipszkarton, festés, ami a legjobban megy)</small></label>
     <textarea id="mit" name="beltero_munkak" required></textarea>
@@ -192,12 +191,29 @@ footer{padding:32px 0 64px;border-top:1px solid var(--line);color:var(--muted);f
     <label for="kerdes">Van kérdésed, vagy bármi, amit tudnunk kell? <small>(nem kötelező)</small></label>
     <textarea id="kerdes" name="kerdes"></textarea>
 
-    <label for="kep">Pár fotó a munkáidról <small>(nem kötelező, telefonról is feltöltheted)</small></label>
-    <input id="kep" name="fotok" type="file" accept="image/*" multiple>
-
     <button class="btn" type="submit">Mehet, küldöm</button>
-    <p class="hint">Ez még nem szerződés. Visszajelzünk, amint megkaptuk.</p>
+    <p class="hint" id="urlap-hint">Ez még nem szerződés. Visszajelzünk, amint megkaptuk.</p>
   </form>
+  <script>
+  (function(){
+    var f=document.getElementById('urlap-form'),h=document.getElementById('urlap-hint'),b=f.querySelector('.btn');
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      b.disabled=true;b.textContent='Küldés...';
+      fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+        .then(function(r){return r.json();})
+        .then(function(d){
+          if(d&&d.success){
+            f.innerHTML='<p style="text-align:center;font-size:19px;font-weight:700;margin:0;color:var(--ok)">Köszönjük, megkaptuk. Hamarosan jelentkezünk.</p>';
+          }else{throw new Error('hiba');}
+        })
+        .catch(function(){
+          b.disabled=false;b.textContent='Mehet, küldöm';
+          h.textContent='Nem sikerült elküldeni. Kérlek próbáld újra, vagy írj nekünk: info@nezor.hu';
+        });
+    });
+  })();
+  </script>
 </section>
 
 <footer>
