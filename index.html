@@ -11,23 +11,24 @@
 *{box-sizing:border-box}
 body{margin:0;font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
 .wrap{max-width:760px;margin:0 auto;padding:0 18px}
-header{padding:30px 0 26px}
+header{padding:38px 0 34px;text-align:center}
+.sec h2,.sec>.sub,.src{text-align:center}
+footer{text-align:center}
 .brand{font-weight:800;letter-spacing:.1em;color:var(--accent)}
 h1{font-size:clamp(28px,6.2vw,40px);line-height:1.15;margin:16px 0 0}
 h2{font-size:clamp(22px,4.6vw,28px);line-height:1.2;margin:0 0 6px}
-.sec{padding:34px 0;border-top:1px solid var(--line)}
-.sub{color:var(--muted);margin:0 0 18px}
+.sec{padding:52px 0;border-top:1px solid var(--line)}
+.sub{color:var(--muted);margin:0 0 24px}
 p{margin:0 0 1em}
 
 /* folyamat */
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px}
-.flow .st{background:var(--soft);border-radius:16px;padding:16px 12px;text-align:center;position:relative}
-.flow .ic{width:46px;height:46px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;margin:0 auto 10px}
-.flow svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.flow b{display:block;font-size:15.5px;line-height:1.3;margin-bottom:4px}
-.flow span{font-size:14px;color:var(--muted);line-height:1.35;display:block}
-.flow .st:not(:last-child):after{content:"";position:absolute;right:-9px;top:34px;width:8px;height:8px;border-top:3px solid var(--accent);border-right:3px solid var(--accent);transform:rotate(45deg)}
-@media (max-width:620px){.flow{grid-template-columns:1fr}.flow .st{display:grid;grid-template-columns:46px 1fr;gap:12px;text-align:left;align-items:center;padding:14px}.flow .ic{margin:0}.flow .st:not(:last-child):after{right:auto;left:30px;top:auto;bottom:-10px;transform:rotate(135deg)}}
+.flow{display:grid;grid-template-columns:1fr;gap:26px;margin-top:6px;max-width:560px;margin-left:auto;margin-right:auto}
+.flow .st{background:var(--soft);border-radius:18px;padding:20px 22px;text-align:left;position:relative;display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:center}
+.flow .ic{width:52px;height:52px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;margin:0}
+.flow svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow b{display:block;font-size:19px;line-height:1.3;margin-bottom:4px}
+.flow span{font-size:16px;color:var(--muted);line-height:1.4;display:block}
+.flow .st:not(:last-child):after{content:"";position:absolute;left:38px;bottom:-17px;width:9px;height:9px;border-top:3px solid var(--accent);border-right:3px solid var(--accent);transform:rotate(135deg)}
 
 /* példa érdeklődő */
 .lead-card{border:2px solid var(--accent);border-radius:18px;overflow:hidden;background:var(--bg)}
@@ -41,12 +42,12 @@ p{margin:0 0 1em}
 .tag{display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:13.5px;padding:3px 10px;border-radius:999px;margin-top:12px}
 
 /* számok */
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.tile{background:var(--soft);border-radius:16px;padding:18px 12px;text-align:center}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.tile{background:var(--soft);border-radius:16px;padding:24px 14px;text-align:center}
 .tile .n{font-size:clamp(24px,5.4vw,32px);font-weight:800;line-height:1.1;color:var(--accent)}
 .tile .l{font-size:14.5px;color:var(--muted);margin-top:6px;line-height:1.3}
 @media (max-width:520px){.tiles{grid-template-columns:1fr}}
-.refs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.refs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .ref{border:1px solid var(--line);border-radius:16px;padding:16px}
 .ref.main{border:2px solid var(--accent)}
 .ref .who{font-weight:700;line-height:1.25}
@@ -59,8 +60,9 @@ p{margin:0 0 1em}
 .src{font-size:13.5px;color:var(--muted);margin-top:10px}
 
 /* űrlap */
-form{background:var(--soft);border-radius:18px;padding:22px 20px}
-label{display:block;font-weight:700;font-size:15.5px;margin:16px 0 6px}
+form{background:var(--soft);border-radius:18px;padding:28px 22px}
+label{display:block;font-weight:700;font-size:15.5px;margin:22px 0 8px}
+label:first-of-type{margin-top:0}
 label small{font-weight:400;color:var(--muted)}
 input,textarea,select{width:100%;font:inherit;font-size:16px;padding:13px;border-radius:10px;border:1px solid #9aa7c0;background:var(--bg);color:var(--ink)}
 textarea{min-height:96px;resize:vertical}
@@ -68,7 +70,7 @@ textarea{min-height:96px;resize:vertical}
 .btn:hover{filter:brightness(.95)}
 .hint{font-size:14px;color:var(--muted);margin-top:10px;text-align:center}
 .hp{position:absolute;left:-9999px}
-footer{padding:26px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+footer{padding:32px 0 64px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
 </style>
 </head>
 <body>
@@ -76,62 +78,61 @@ footer{padding:26px 0 48px;border-top:1px solid var(--line);color:var(--muted);f
 
 <header>
   <div class="brand">NEZOR</div>
-  <h1>Így szereznénk neked megrendelőket Facebookon és Instagramon</h1>
+  <h1>Mi hozzuk az ügyfeleket.<br>Neked csak fel kell hívnod őket.</h1>
+  <p class="sub" style="margin:14px 0 0;font-size:19px;color:var(--ink)">Mi csináljuk a Facebook- és Instagram-hirdetést, az ajánlatkérő oldalt és a mérést. Te azokat az embereket kapod meg, akik nagy valószínűséggel pont azt a munkát szeretnék, amit te tudsz.</p>
 </header>
 
 <!-- 1. folyamat -->
-<section class="sec" style="padding-top:8px;border-top:0">
-  <h2>Így működik, négy lépésben</h2>
-  <p class="sub">Neked csak az utolsó lépés a dolgod.</p>
+<section class="sec" style="padding-top:14px;border-top:0">
+  <h2>Négy lépés. Ebből egy a tiéd.</h2>
+  <p class="sub">A többit mi intézzük.</p>
   <div class="flow">
     <div class="st">
       <div class="ic"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-      <div><b>Hirdetés</b><span>A környékeden élő emberek Facebookon és Instagramon látják</span></div>
+      <div><b>Hirdetés</b><span>Facebookon és Instagramon azok látják, akik nagy valószínűséggel pont azt akarják, amit te csinálsz</span></div>
     </div>
     <div class="st">
       <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
-      <div><b>Egyszerű oldal</b><span>Kitöltik, mit szeretnének csináltatni, és megadják az adataikat</span></div>
+      <div><b>Ajánlatkérő</b><span>Rákattintanak, megírják, mit szeretnének, és hagynak egy telefonszámot</span></div>
     </div>
     <div class="st">
       <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></div>
-      <div><b>Mi átküldjük</b><span>Az érdeklődő adatait mi továbbítjuk neked</span></div>
+      <div><b>Megkapod</b><span>Mi átküldjük az adataikat. Neked a hirdetéssel nem kell foglalkoznod</span></div>
     </div>
     <div class="st">
       <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
-      <div><b>Te felveszed velük a kapcsolatot</b><span>Megbeszélitek a munkát</span></div>
+      <div><b>Felhívod őket</b><span>Ez a te dolgod. Innen a munka már rólad szól</span></div>
     </div>
   </div>
 </section>
 
 <!-- 2. példa érdeklődő -->
 <section class="sec">
-  <h2>Ilyen érdeklődőt kapsz</h2>
-  <p class="sub">Nem csak egy telefonszámot. Már az elején tudod, mit szeretne és mikorra.</p>
+  <h2>Nem egy ismeretlen szám. Egy konkrét munka.</h2>
+  <p class="sub">Mielőtt felhívod, már tudod, hol van, mit akar és mikorra.</p>
   <div class="lead-card">
     <div class="lead-top"><span>Új érdeklődő</span><span>PÉLDA</span></div>
     <div class="lead-body">
-      <div><small>Név</small><b>Példa Péter</b></div>
-      <div><small>Telefonszám</small><b>+36 30 000 0000</b></div>
+      <div><small>Név</small><b>Müller Dániel</b></div>
+      <div><small>Telefonszám</small><b>+36 30 203 6721</b></div>
       <div><small>Település</small><b>Baja</b></div>
       <div><small>Mikorra szeretné</small><b>Januárban</b></div>
       <div class="full"><small>Mit szeretne csináltatni</small><b>Lakás beltéri felújítása, előtte a régi burkolat bontásával, kb. 60 négyzetméteren</b></div>
     </div>
   </div>
-  <span class="tag">Valaki, aki már eldöntötte, hogy felújít</span>
 </section>
 
 <!-- 3. referenciák -->
 <section class="sec">
-  <h2>Mit értünk el másoknak</h2>
-  <p class="sub">Építőipari ügyfeleink, valós számok a Meta Hirdetéskezelőből.</p>
+  <h2>Mit hoztunk másoknak</h2>
+  <p class="sub">Építőipari ügyfelek, valós számok. Nem kitaláltuk, a Meta Hirdetéskezelőből másoltuk.</p>
   <div class="refs">
     <div class="ref main">
       <div class="who">Tóth Tamás EV.</div>
       <div class="what">Térkövezés, betonozás, földmunka</div>
-      <div class="big">76 <small>ajánlatkérés</small></div>
-      <div class="row"><span>Egy ajánlatkérés</span><b>791 Ft</b></div>
-      <div class="row"><span>Napi keret</span><b>2 000 Ft</b></div>
-      <div class="row"><span>Idő</span><b>31 nap</b></div>
+      <div class="big">211 <small>ajánlatkérés</small></div>
+      <div class="row"><span>Egy ajánlatkérés</span><b>769 Ft</b></div>
+      <div class="row"><span>Elköltött összeg</span><b>162 344 Ft</b></div>
     </div>
     <div class="ref">
       <div class="who">Komár és Fia Kft.</div>
@@ -144,30 +145,36 @@ footer{padding:26px 0 48px;border-top:1px solid var(--line);color:var(--muted);f
     <div class="ref">
       <div class="who">Empire Build</div>
       <div class="what">Országos kivitelező, lakossági megrendelők</div>
-      <div class="big">105 <small>ajánlatkérés</small></div>
-      <div class="row"><span>Egy ajánlatkérés</span><b>1 488 Ft</b></div>
-      <div class="row"><span>Napi keret</span><b>10 000 Ft</b></div>
-      <div class="row"><span>Idő</span><b>16 nap</b></div>
+      <div class="big">235 <small>ajánlatkérés</small></div>
+      <div class="row"><span>Egy ajánlatkérés</span><b>1 264 Ft</b></div>
+      <div class="row"><span>Elköltött összeg</span><b>296 939 Ft</b></div>
+    </div>
+    <div class="ref">
+      <div class="who">Quickhouse.hu</div>
+      <div class="what">Acélházak</div>
+      <div class="big">284 <small>ajánlatkérés</small></div>
+      <div class="row"><span>Egy ajánlatkérés</span><b>854 Ft</b></div>
+      <div class="row"><span>Elköltött összeg</span><b>242 435 Ft</b></div>
     </div>
   </div>
-  <p class="src">Forrás: Meta Hirdetéskezelő, 2026. október 5-i állapot.</p>
+  <p class="src">Forrás: Meta Hirdetéskezelő, 2026. október 29-i állapot (Komár és Fia Kft.: október 5.).</p>
 </section>
 
 <!-- 4. költség -->
 <section class="sec">
-  <h2>Mennyibe kerül</h2>
-  <p class="sub">Két külön tétel, így mindig látod, mire megy a pénz.</p>
+  <h2>Mennyibe kerül? Pontosan ennyibe.</h2>
+  <p class="sub">Két tétel. Se rejtett költség, se "egyedi árajánlat".</p>
   <div class="tiles">
-    <div class="tile"><div class="n">3 000 Ft</div><div class="l">napi hirdetési keret<br>(kb. 90 000 Ft/hó), a Metának megy a saját hirdetői fiókodból</div></div>
-    <div class="tile"><div class="n">79 000 Ft</div><div class="l">a mi díjunk havonta</div></div>
-    <div class="tile"><div class="n">Benne van</div><div class="l">oldal, hirdetések beállítása és követése, mérés, az érdeklődők átküldése</div></div>
+    <div class="tile"><div class="n">90 000 Ft / hó</div><div class="l">hirdetési keret (napi 3 000 Ft). Ez nem a mi költségünk, ezt közvetlenül a Metának fizeted</div></div>
+    <div class="tile"><div class="n">79 000 Ft / hó</div><div class="l">a mi díjunk</div></div>
   </div>
+  <p class="src" style="text-align:center;font-size:15.5px">A mi díjunkban benne van az oldal, a hirdetések, a mérés és az érdeklődők átküldése.</p>
 </section>
 
 <!-- 5. űrlap -->
 <section class="sec" id="urlap">
-  <h2>Ha belevágnál, töltsd ki ezt</h2>
-  <p class="sub">Pár perc. Amit itt megírsz, azt megkapjuk, és az alapján elkészítjük az oldalt és a hirdetéseket.</p>
+  <h2>Ha tetszik, írd le, mit tudsz. A többit mi megcsináljuk.</h2>
+  <p class="sub">Pár perc. Ebből látjuk, mire van szükséged, és felvesszük veled a kapcsolatot. Az oldal és a hirdetések elkészítését a díj megérkezése után kezdjük.</p>
 
   <form action="https://formsubmit.co/miklosjelencsity@gmail.com" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_cc" value="muller.dani.juve@gmail.com">
@@ -176,31 +183,25 @@ footer{padding:26px 0 48px;border-top:1px solid var(--line);color:var(--muted);f
     <input type="hidden" name="_captcha" value="false">
     <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-    <label for="nev">A neved</label>
-    <input id="nev" name="nev" required autocomplete="name">
-
-    <label for="tel">Telefonszámod</label>
-    <input id="tel" name="telefon" type="tel" required autocomplete="tel">
-
-    <label for="mit">Milyen beltéri munkákat vállalsz? <small>(pl. bontás, burkolás, gipszkarton, festés)</small></label>
+    <label for="mit">Milyen beltéri munkákat vállalsz? <small>(bontás, burkolás, gipszkarton, festés, ami a legjobban megy)</small></label>
     <textarea id="mit" name="beltero_munkak" required></textarea>
 
-    <label for="hol">Mely régióban dolgozol?</label>
+    <label for="hol">Hol dolgozol? <small>(város vagy régió)</small></label>
     <input id="hol" name="regio" required>
 
-    <label for="kerdes">Kérdésed, vagy bármi, amit tudnunk kell <small>(nem kötelező)</small></label>
+    <label for="kerdes">Van kérdésed, vagy bármi, amit tudnunk kell? <small>(nem kötelező)</small></label>
     <textarea id="kerdes" name="kerdes"></textarea>
 
-    <label for="kep">Pár fotó a kész munkáidról <small>(nem kötelező, telefonról is feltöltheted)</small></label>
+    <label for="kep">Pár fotó a munkáidról <small>(nem kötelező, telefonról is feltöltheted)</small></label>
     <input id="kep" name="fotok" type="file" accept="image/*" multiple>
 
-    <button class="btn" type="submit">Elküldöm</button>
-    <p class="hint">Visszajelzünk, amint megkaptuk.</p>
+    <button class="btn" type="submit">Mehet, küldöm</button>
+    <p class="hint">Ez még nem szerződés. Visszajelzünk, amint megkaptuk.</p>
   </form>
 </section>
 
 <footer>
-  Nezor | nezor.hu | info@nezor.hu | +36 70 455 4703
+  Nezor | nezor.hu | info@nezor.hu | +36 30 203 6721
 </footer>
 
 </div>
